@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul class="tool-list">
+                <li data-tool="base64" class="active">Base64 编码/解码</li>
+                <li data-tool="url">URL 编码/解码</li>
+                <li data-tool="timestamp">时间戳转换</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="base64" class="tool-content active">
+                <h3>Base64 编码/解码</h3>
+                <textarea id="base64Input" placeholder="输入要转换的文本"></textarea>
+                <div class="button-group">
+                    <button id="base64Encode">编码</button>
+                    <button id="base64Decode">解码</button>
+                </div>
+                <div class="output-container">
+                    <textarea id="base64Output" placeholder="转换结果" readonly></textarea>
+                    <button class="copy-btn" data-target="base64Output">复制</button>
+                </div>
+            </div>
+
+            <div id="url" class="tool-content">
+                <h3>URL 编码/解码</h3>
+                <textarea id="urlInput" placeholder="输入要转换的文本"></textarea>
+                <div class="button-group">
+                    <button id="urlEncode">编码</button>
+                    <button id="urlDecode">解码</button>
+                </div>
+                <div class="output-container">
+                    <textarea id="urlOutput" placeholder="转换结果" readonly></textarea>
+                    <button class="copy-btn" data-target="urlOutput">复制</button>
+                </div>
+            </div>
+
+            <div id="timestamp" class="tool-content">
+                <h3>时间戳转换</h3>
+                <div class="timestamp-container">
+                    <div class="timestamp-section">
+                        <h4>时间戳转日期时间</h4>
+                        <div class="input-group">
+                            <input type="text" id="timestampInput" placeholder="请输入时间戳（毫秒）">
+                            <button id="timestamp2date">转换</button>
+                        </div>
+                        <div class="output-container">
+                            <div id="timestamp2dateOutput" class="output-box"></div>
+                            <button class="copy-btn" data-target="timestamp2dateOutput">复制</button>
+                        </div>
+                    </div>
+
+                    <div class="timestamp-section">
+                        <h4>日期时间转时间戳</h4>
+                        <div class="input-group">
+                            <input type="datetime-local" id="dateInput">
+                            <button id="date2timestamp">转换</button>
+                        </div>
+                        <div class="output-container">
+                            <div id="date2timestampOutput" class="output-box"></div>
+                            <button class="copy-btn" data-target="date2timestampOutput">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tools.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>

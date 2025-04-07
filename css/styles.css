@@ -1,171 +1,412 @@
+/* 添加图标字体 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+/* 添加现代字体 */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap");
+
 body {
-  width: 600px;
-  height: 400px;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+    width: 600px;
+    height: 400px;
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
 }
 
 .container {
-  display: flex;
-  height: 100%;
-  background-color: white;
+    display: flex;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .sidebar {
-  width: 200px;
-  background-color: #2c3e50;
-  border-right: 1px solid #34495e;
+    width: 200px;
+    background-color: #1e293b;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tool-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
 }
 
 .tool-list li {
-  padding: 12px 16px;
-  cursor: pointer;
-  border-bottom: 1px solid #34495e;
-  color: #ecf0f1;
-  transition: background-color 0.2s;
+    padding: 12px 16px;
+    cursor: pointer;
+    margin: 4px 8px;
+    border-radius: 8px;
+    color: #e2e8f0;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
 }
 
 .tool-list li:hover {
-  background-color: #34495e;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .tool-list li.active {
-  background-color: #3498db;
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.tool-list li i {
+    margin-right: 10px;
+    font-size: 16px;
 }
 
 .content {
-  flex: 1;
-  padding: 16px;
-  background-color: white;
+    flex: 1;
+    padding: 24px;
+    background-color: white;
+    overflow-y: auto;
 }
 
 .tool-content {
-  display: none;
+    display: none;
+    animation: fadeIn 0.3s ease;
 }
 
 .tool-content.active {
-  display: block;
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 textarea {
-  width: 100%;
-  height: 100px;
-  margin: 8px 0;
-  padding: 8px;
-  resize: vertical;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: monospace;
+    width: 100%;
+    height: 100px;
+    margin: 12px 0;
+    padding: 12px;
+    resize: vertical;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f8fafc;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .button-group {
-  margin: 8px 0;
+    margin: 12px 0;
+    display: flex;
+    gap: 8px;
 }
 
 button {
-  padding: 6px 12px;
-  margin-right: 8px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    padding: 8px 16px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button:hover {
-  background-color: #2980b9;
+    background-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
 }
 
 .timestamp-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .timestamp-section {
-  background-color: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.3s ease;
+}
+
+.timestamp-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .timestamp-section h4 {
-  margin: 0 0 15px 0;
-  color: #333;
+    margin: 0 0 16px 0;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .input-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
 .input-group input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f8fafc;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .output-box {
-  background-color: white;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  min-height: 20px;
-  font-family: monospace;
+    background-color: #f8fafc;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    min-height: 24px;
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: 14px;
 }
 
 h3 {
-  color: #2c3e50;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #3498db;
+    color: #1e293b;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #3b82f6;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .output-container {
-  position: relative;
-  margin: 8px 0;
+    position: relative;
+    margin: 12px 0;
 }
 
 .output-container textarea,
 .output-container .output-box {
-  padding-right: 70px;
+    padding-right: 70px;
 }
 
 .copy-btn {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  padding: 4px 8px;
-  font-size: 12px;
-  background-color: #2ecc71;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    background-color: #10b981;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.8;
+    transition: all 0.2s ease;
 }
 
 .copy-btn:hover {
-  background-color: #27ae60;
+    background-color: #059669;
+    opacity: 1;
 }
 
 .copy-btn.success {
-  background-color: #27ae60;
+    background-color: #059669;
+    opacity: 1;
 }
 
 /* 添加复制成功的动画效果 */
 @keyframes copySuccess {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .copy-animation {
-  animation: copySuccess 0.3s ease-in-out;
-} 
+    animation: copySuccess 0.3s ease-in-out;
+}
+
+/* JSON Diff 样式 */
+.diff-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.diff-section {
+    flex: 1;
+    background-color: #f8fafc;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.diff-section h4 {
+    margin: 0 0 16px 0;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.diff-section textarea {
+    height: 120px;
+    margin-top: 0;
+}
+
+.diff-output {
+    background-color: #f8fafc;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: "Fira Code", "Consolas", monospace;
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Diff 高亮样式 */
+.diff-added {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #047857;
+    padding: 2px 0;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.diff-removed {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #b91c1c;
+    padding: 2px 0;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.diff-unchanged {
+    color: #64748b;
+    padding: 2px 0;
+    margin: 2px 0;
+}
+
+/* JSON 字符串转换样式 */
+.json-string-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.json-string-section {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.3s ease;
+}
+
+.json-string-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.json-string-section h4 {
+    margin: 0 0 16px 0;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.json-string-section textarea {
+    height: 100px;
+}
+
+/* 添加工具图标 */
+.tool-icon {
+    margin-right: 10px;
+    width: 18px;
+    text-align: center;
+}
+
+/* 复制提示样式 */
+.copy-tooltip {
+    position: fixed;
+    background-color: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.copy-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #1e293b;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 内容切换动画 */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.15s ease forwards;
+}

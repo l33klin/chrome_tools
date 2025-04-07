@@ -5,13 +5,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap");
 
 body {
-    width: 600px;
-    height: 400px;
+    width: 700px;
+    height: 500px;
     margin: 0;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Oxygen, Ubuntu, sans-serif;
     background-color: #f8fafc;
     color: #334155;
+    overflow: hidden;
 }
 
 .container {
@@ -24,7 +25,7 @@ body {
 }
 
 .sidebar {
-    width: 200px;
+    width: 180px;
     background-color: #1e293b;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -36,7 +37,7 @@ body {
 }
 
 .tool-list li {
-    padding: 12px 16px;
+    padding: 10px 14px;
     cursor: pointer;
     margin: 4px 8px;
     border-radius: 8px;
@@ -44,7 +45,7 @@ body {
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .tool-list li:hover {
@@ -58,15 +59,18 @@ body {
 }
 
 .tool-list li i {
-    margin-right: 10px;
-    font-size: 16px;
+    margin-right: 8px;
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
 }
 
 .content {
     flex: 1;
-    padding: 24px;
+    padding: 20px;
     background-color: white;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .tool-content {
@@ -91,16 +95,17 @@ body {
 
 textarea {
     width: 100%;
-    height: 100px;
-    margin: 12px 0;
-    padding: 12px;
+    height: 90px;
+    margin: 8px 0;
+    padding: 10px;
     resize: vertical;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 6px;
     font-family: "Fira Code", "Consolas", monospace;
-    font-size: 14px;
+    font-size: 13px;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     background-color: #f8fafc;
+    box-sizing: border-box;
 }
 
 textarea:focus {
@@ -110,24 +115,26 @@ textarea:focus {
 }
 
 .button-group {
-    margin: 12px 0;
+    margin: 10px 0;
     display: flex;
     gap: 8px;
+    justify-content: flex-start;
 }
 
 button {
-    padding: 8px 16px;
+    padding: 8px 14px;
     background-color: #3b82f6;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 
 button:hover {
@@ -175,12 +182,13 @@ button:active {
 
 .input-group input {
     flex: 1;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-size: 13px;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     background-color: #f8fafc;
+    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -201,16 +209,18 @@ button:active {
 
 h3 {
     color: #1e293b;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #3b82f6;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .output-container {
     position: relative;
     margin: 12px 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .output-container textarea,
@@ -220,17 +230,18 @@ h3 {
 
 .copy-btn {
     position: absolute;
-    right: 8px;
-    top: 8px;
-    padding: 6px 12px;
-    font-size: 12px;
+    right: 6px;
+    top: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
     background-color: #10b981;
-    border-radius: 6px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     opacity: 0.8;
     transition: all 0.2s ease;
+    z-index: 10;
 }
 
 .copy-btn:hover {
@@ -264,15 +275,29 @@ h3 {
 .diff-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.diff-inputs {
+    display: flex;
+    gap: 12px;
+    width: 100%;
 }
 
 .diff-section {
     flex: 1;
     background-color: #f8fafc;
-    padding: 16px;
+    padding: 12px;
     border-radius: 12px;
     border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+}
+
+.diff-button-group {
+    justify-content: center;
+    margin: 8px 0;
 }
 
 .diff-section h4 {
@@ -283,21 +308,24 @@ h3 {
 }
 
 .diff-section textarea {
-    height: 120px;
+    height: 80px;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .diff-output {
     background-color: #f8fafc;
-    padding: 16px;
+    padding: 10px;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 6px;
     font-family: "Fira Code", "Consolas", monospace;
     white-space: pre-wrap;
-    max-height: 300px;
+    max-height: 120px;
     overflow-y: auto;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* Diff 高亮样式 */
@@ -327,16 +355,19 @@ h3 {
 .json-string-container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .json-string-section {
     background-color: #f8fafc;
-    padding: 20px;
+    padding: 16px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
     transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .json-string-section:hover {
@@ -344,14 +375,19 @@ h3 {
 }
 
 .json-string-section h4 {
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
     color: #1e293b;
     font-weight: 600;
     font-size: 16px;
 }
 
 .json-string-section textarea {
-    height: 100px;
+    height: 90px;
+    margin-bottom: 8px;
+}
+
+.json-button-group {
+    justify-content: center;
 }
 
 /* 添加工具图标 */

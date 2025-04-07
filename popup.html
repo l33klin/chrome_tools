@@ -97,15 +97,19 @@
             <div id="jsonDiff" class="tool-content">
                 <h3>JSON 对比</h3>
                 <div class="diff-container">
-                    <div class="diff-section">
-                        <h4>原始 JSON</h4>
-                        <textarea id="jsonOldInput" placeholder="输入原始 JSON"></textarea>
+                    <div class="diff-inputs">
+                        <div class="diff-section">
+                            <h4>原始 JSON</h4>
+                            <textarea id="jsonOldInput" placeholder="输入原始 JSON"></textarea>
+                        </div>
+                        <div class="diff-section">
+                            <h4>新的 JSON</h4>
+                            <textarea id="jsonNewInput" placeholder="输入新的 JSON"></textarea>
+                        </div>
                     </div>
-                    <div class="diff-section">
-                        <h4>新的 JSON</h4>
-                        <textarea id="jsonNewInput" placeholder="输入新的 JSON"></textarea>
+                    <div class="button-group diff-button-group">
+                        <button type="button" id="compareDiff"><i class="fas fa-code-compare"></i> 对比</button>
                     </div>
-                    <button type="button" id="compareDiff"><i class="fas fa-code-compare"></i> 对比</button>
                     <div class="output-container">
                         <div id="jsonDiffOutput" class="diff-output"></div>
                         <button type="button" class="copy-btn" data-target="jsonDiffOutput"><i class="far fa-copy"></i>
@@ -120,7 +124,7 @@
                     <div class="json-string-section">
                         <h4>字符串转 JSON</h4>
                         <textarea id="stringInput" placeholder="输入需要转换的字符串（例如：{\" name\":\"test\"}）"></textarea>
-                        <div class="button-group">
+                        <div class="button-group json-button-group">
                             <button type="button" id="string2json"><i class="fas fa-exchange-alt"></i> 转换</button>
                         </div>
                         <div class="output-container">
@@ -133,7 +137,7 @@
                     <div class="json-string-section">
                         <h4>JSON 转字符串</h4>
                         <textarea id="jsonStringInput" placeholder="输入需要转换的 JSON"></textarea>
-                        <div class="button-group">
+                        <div class="button-group json-button-group">
                             <button type="button" id="json2string"><i class="fas fa-exchange-alt"></i> 转换</button>
                         </div>
                         <div class="output-container">
